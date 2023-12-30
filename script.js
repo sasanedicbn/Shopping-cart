@@ -5,6 +5,7 @@ const sortOptions = document.querySelector(".sortOptions");
 function displayCars(data) {
   cars.forEach((data) => {
     const cars = document.createElement("div");
+    cars.innerHTML = "";
 
     cars.innerHTML = `<div class="cart-row"> 
   <div class="first-data">
@@ -32,11 +33,13 @@ function sortElement(event) {
   console.log(valueElement);
 
   if (valueElement === "az") {
-    cars = cars.slice().sort((a, b) => a.name.localeCompare(b.name));
+    let sortedCars = cars.slice().sort((a, b) => a.name.localeCompare(b.name));
+    displayCars(sortedCars);
   } else if (valueElement === "za") {
-    cars = cars.slice().sort((a, b) => b.name.localeCompare(a.name));
+    let sortedCars = cars.slice().sort((a, b) => b.name.localeCompare(a.name));
+    displayCars(sortedCars);
   } else {
     return;
   }
 }
-sortOptions.addEventListener("click", sortElement);
+sortOptions.addEventListener("change", sortElement);
