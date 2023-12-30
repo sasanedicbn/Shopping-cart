@@ -1,11 +1,11 @@
 import { cars } from "./data";
 const car = document.querySelector(".car");
 
-cars.forEach((data) => {
-  const nameDiv = document.createElement("div");
+function displayCars(data) {
+  cars.forEach((data) => {
+    const cars = document.createElement("div");
 
-  // Kreiraj i postavi HTML za svako ime
-  nameDiv.innerHTML = `<div class="cart-row"> 
+    cars.innerHTML = `<div class="cart-row"> 
   <div class="first-data">
   <h1>${data.name}</h1>
   <img src = "${data.image}" alt="${data.image}"/>
@@ -21,6 +21,25 @@ cars.forEach((data) => {
   </div>
 `;
 
-  // Dodaj div sa imenom u kontejner
-  car.appendChild(nameDiv);
-});
+    car.appendChild(cars);
+  });
+}
+
+function sortedArray() {
+  const sortOptions = document.querySelector(".sortOptions");
+  const valueOfSortOptions = sortOptions.value;
+  let sortedCars;
+
+  if (valueOfSortOptions === "A-Z") {
+    sortedCars = cars.slice().sort((a, b) => a.name.localeCompare(b.name));
+  } else if (valueOfSortOptions === "Z-A") {
+    sortedCars = cars.slice().sort((a, b) => b.name.localeCompare(a.name));
+  } else {
+    return;
+  }
+
+  displayCars(sortedCars);
+}
+
+displayCars(cars);
+sortedArray();
