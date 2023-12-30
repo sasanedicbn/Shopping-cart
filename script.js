@@ -1,5 +1,6 @@
 import { cars } from "./data";
 const car = document.querySelector(".car");
+const sortOptions = document.querySelector(".sortOptions");
 
 function displayCars(data) {
   cars.forEach((data) => {
@@ -24,22 +25,18 @@ function displayCars(data) {
     car.appendChild(cars);
   });
 }
+displayCars();
 
-function sortedArray() {
-  const sortOptions = document.querySelector(".sortOptions");
-  const valueOfSortOptions = sortOptions.value;
-  let sortedCars;
+function sortElement(event) {
+  const valueElement = event.target.value;
+  console.log(valueElement);
 
-  if (valueOfSortOptions === "A-Z") {
-    sortedCars = cars.slice().sort((a, b) => a.name.localeCompare(b.name));
-  } else if (valueOfSortOptions === "Z-A") {
-    sortedCars = cars.slice().sort((a, b) => b.name.localeCompare(a.name));
+  if (valueElement === "az") {
+    cars = cars.slice().sort((a, b) => a.name.localeCompare(b.name));
+  } else if (valueElement === "za") {
+    cars = cars.slice().sort((a, b) => b.name.localeCompare(a.name));
   } else {
     return;
   }
-
-  displayCars(sortedCars);
 }
-
-displayCars(cars);
-sortedArray();
+sortOptions.addEventListener("click", sortElement);
