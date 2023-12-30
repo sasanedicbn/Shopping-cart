@@ -11,10 +11,10 @@ cars.forEach((data) => {
   <img src = "${data.image}" alt="${data.image}"/>
   </div>
   <div class="second-data">
-   <p><strong>Brand:</strong> ${data.brand}</p>
+  <p><strong>Brand:</strong> ${data.brand}</p>
   <p><strong>Manufactured Year:</strong> ${data.manufacturedYear}</p>
   <p><strong>Doors:</strong> ${data.doors}</p>
-  <p><strong>Price:</strong> $${data.price}</p>
+  <p><strong>Price:</strong><span class="price">$${data.price}<span></p>
   </div>
   <p><strong>Available:</strong> ${data.available ? "Yes" : "No"}</p>
   <hr>
