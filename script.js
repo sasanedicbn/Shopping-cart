@@ -6,12 +6,16 @@ cars.forEach((data) => {
 
   // Kreiraj i postavi HTML za svako ime
   nameDiv.innerHTML = `<div class="cart-row"> 
+  <div class="first-data">
   <h1>${data.name}</h1>
- <img src = "${data.image}" alt="${data.image}"/>
+  <img src = "${data.image}" alt="${data.image}"/>
+  </div>
+  <div class="second-data">
    <p><strong>Brand:</strong> ${data.brand}</p>
   <p><strong>Manufactured Year:</strong> ${data.manufacturedYear}</p>
   <p><strong>Doors:</strong> ${data.doors}</p>
   <p><strong>Price:</strong> $${data.price}</p>
+  </div>
   <p><strong>Available:</strong> ${data.available ? "Yes" : "No"}</p>
   <hr>
   </div>

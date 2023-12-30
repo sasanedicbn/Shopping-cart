@@ -7,6 +7,22 @@ main{
   padding: 50px 150px;
 }
 .container{
-  background-color: red;
+  background-color: rgb(228, 214, 214);
   padding: 20px;
+}
+.cart-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(201, 200, 200);
+  padding: 20px;
+  margin-bottom: 10px;
+}
+img{
+  width: 320px;
+  height: 220px;
+  padding-top: 10px;
+}
+p{
+  padding: 10px;
 }
