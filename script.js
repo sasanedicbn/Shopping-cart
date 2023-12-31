@@ -23,7 +23,6 @@ function displayCars(elementCars) {
   <hr>
   </div>
 `;
-
     car.appendChild(cars);
   });
 }
@@ -44,7 +43,5 @@ function sortElement(event) {
   } else {
     return;
   }
-  cars = sortedCars;
-  displayCars(sortedCars);
 }
 sortOptions.addEventListener("change", sortElement);
