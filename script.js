@@ -44,7 +44,6 @@ function sortElement(event) {
     displayCars(sortedCars);
     console.log(sortedCars);
   } else if (valueElement === "low") {
-    // let sortedCarsLow = cars.slice().sort((a,b) => a.price)
     return;
   }
 }
