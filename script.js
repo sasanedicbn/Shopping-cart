@@ -2,10 +2,11 @@ import { cars } from "./data";
 const car = document.querySelector(".car");
 const sortOptions = document.querySelector(".sortOptions");
 
-function displayCars(data) {
-  cars.forEach((data) => {
+function displayCars(elementCars) {
+  car.innerHTML = "";
+  console.log(elementCars);
+  elementCars.forEach((data) => {
     const cars = document.createElement("div");
-    cars.innerHTML = "";
 
     cars.innerHTML = `<div class="cart-row"> 
   <div class="first-data">
@@ -26,7 +27,7 @@ function displayCars(data) {
     car.appendChild(cars);
   });
 }
-displayCars();
+displayCars(cars);
 
 function sortElement(event) {
   const valueElement = event.target.value;
@@ -35,11 +36,15 @@ function sortElement(event) {
   if (valueElement === "az") {
     let sortedCars = cars.slice().sort((a, b) => a.name.localeCompare(b.name));
     displayCars(sortedCars);
+    console.log(sortedCars);
   } else if (valueElement === "za") {
     let sortedCars = cars.slice().sort((a, b) => b.name.localeCompare(a.name));
     displayCars(sortedCars);
+    console.log(sortedCars);
   } else {
     return;
   }
+  cars = sortedCars;
+  displayCars(sortedCars);
 }
 sortOptions.addEventListener("change", sortElement);
