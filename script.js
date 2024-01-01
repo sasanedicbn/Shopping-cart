@@ -1,6 +1,7 @@
 import { cars } from "./data";
 const car = document.querySelector(".car");
 const sortOptions = document.querySelector(".sortOptions");
+const availability = document.querySelector(".availability");
 
 function displayCars(elementCars) {
   car.innerHTML = "";
@@ -66,5 +67,5 @@ function availableCars(event) {
     return displayCars(cars);
   }
 }
-
+availability.addEventListener("click", availableCars);
 sortOptions.addEventListener("change", sortCars);
