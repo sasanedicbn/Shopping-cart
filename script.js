@@ -8,6 +8,9 @@ function displayCars(elementCars) {
   console.log(elementCars);
   elementCars.forEach((data) => {
     const cars = document.createElement("div");
+    const backgroundColor = data.available
+      ? "rgb(91, 199, 91)"
+      : "rgb(214, 81, 81)";
 
     cars.innerHTML = `<div class="cart-row"> 
   <div class="first-data">
@@ -20,7 +23,9 @@ function displayCars(elementCars) {
   <p><strong>Doors:</strong> ${data.doors}</p>
   <p><strong>Price:</strong><span class="price">$${data.price}<span></p>
   </div>
-  <p><strong>Available:</strong> ${data.available ? "Yes" : "No"}</p>
+  <p style="background-color: ${backgroundColor};"><strong>Available:</strong> ${
+      data.available ? "Yes" : "No"
+    }</p>
   <hr>
   </div>
 `;
@@ -67,5 +72,5 @@ function availableCars(event) {
     return displayCars(cars);
   }
 }
-availability.addEventListener("click", availableCars);
+availability.addEventListener("change", availableCars);
 sortOptions.addEventListener("change", sortCars);

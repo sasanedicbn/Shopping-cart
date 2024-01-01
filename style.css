@@ -48,6 +48,7 @@ main{
   scroll-snap-type: y mandatory; 
   overflow-y: scroll; 
 }
+
 .select-container{
   background-color: rgb(77, 74, 74);
   display: flex;
