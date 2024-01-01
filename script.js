@@ -36,7 +36,6 @@ displayCars(cars);
 
 function sortCars(event) {
   const valueElement = event.target.value;
-  //   const price = cars.slice().sort((a, b) => console.log(typeof a.price));
 
   if (valueElement === "az") {
     let sortedCars = cars.slice().sort((a, b) => a.name.localeCompare(b.name));
