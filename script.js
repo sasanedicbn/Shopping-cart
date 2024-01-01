@@ -58,8 +58,12 @@ function availableCars(event) {
     const sortedAvailable = cars.filter((car) => car.available === true);
     console.log(sortedAvailable);
     displayCars(sortedAvailable);
+  } else if (valueElement === "notAvailable") {
+    const sortedNotAvailable = cars.filter((car) => car.available === false);
+    console.log(sortedNotAvailable);
+    displayCars(sortedNotAvailable);
   } else {
-    return;
+    return displayCars(cars);
   }
 }
 
