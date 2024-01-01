@@ -28,9 +28,9 @@ function displayCars(elementCars) {
 }
 displayCars(cars);
 
-function sortElement(event) {
+function sortCars(event) {
   const valueElement = event.target.value;
-  const price = cars.slice().sort((a, b) => console.log(typeof a.price));
+  //   const price = cars.slice().sort((a, b) => console.log(typeof a.price));
 
   if (valueElement === "az") {
     let sortedCars = cars.slice().sort((a, b) => a.name.localeCompare(b.name));
@@ -51,4 +51,16 @@ function sortElement(event) {
     return;
   }
 }
-sortOptions.addEventListener("change", sortElement);
+function availableCars(event) {
+  const valueElement = event.target.value;
+  console.log(valueElement);
+  if (valueElement === "available") {
+    const sortedAvailable = cars.filter((car) => car.available === true);
+    console.log(sortedAvailable);
+    displayCars(sortedAvailable);
+  } else {
+    return;
+  }
+}
+
+sortOptions.addEventListener("change", sortCars);
