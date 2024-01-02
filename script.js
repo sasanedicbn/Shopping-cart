@@ -13,9 +13,9 @@ function logicCars() {
     elementCars.forEach((data) => {
       const cars = document.createElement("div");
       console.log(data);
-      const backgroundColor = data.available
-        ? "rgb(91, 199, 91)"
-        : "rgb(214, 81, 81)";
+      const backgroundColor =
+        data.available === "yes" ? "rgb(91, 199, 91)" : "rgb(214, 81, 81)";
+      const availabilityText = data.available === "yes" ? "Yes" : "No";
 
       cars.innerHTML = `<div class="cart-row"> 
     <div class="first-data">
@@ -28,9 +28,7 @@ function logicCars() {
     <p><strong>Doors:</strong> ${data.doors}</p>
     <p><strong>Price:</strong><span class="price">$${data.price}<span></p>
     </div>
-    <p style="background-color: ${backgroundColor};"><strong>Available:</strong> ${
-        data.available ? "Yes" : "No"
-      }</p>
+    <p style="background-color: ${backgroundColor};"><strong>Available:</strong> ${availabilityText}</p>
       <button class="deleteCar" data-carId=${data.id}>Delete</button>
 
    
