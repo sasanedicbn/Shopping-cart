@@ -30,8 +30,6 @@ function logicCars() {
     </div>
     <p style="background-color: ${backgroundColor};"><strong>Available:</strong> ${availabilityText}</p>
       <button class="deleteCar" data-carId=${data.id}>Delete</button>
-
-   
     </div>
   `;
       car.appendChild(cars);

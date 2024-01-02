@@ -78,6 +78,8 @@ option {
   color: #333;
 }
 .deleteCar{
-  background-color: rgb(214, 81, 81);
+  background-color: rgb(214, 42, 42);
+  padding: 10px;
+  color: white;
   cursor: pointer;
 }
