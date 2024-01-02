@@ -6,7 +6,7 @@ export const cars = [
     manufacturedYear: 2019,
     doors: 4,
     price: 22000,
-    available: true,
+    available: "yes",
     image: "./img/first car toyota.jpg",
   },
   {
@@ -16,7 +16,7 @@ export const cars = [
     manufacturedYear: 2020,
     doors: 4,
     price: 25000,
-    available: true,
+    available: "yes",
     image: "./img/honda civic second.webp",
   },
   {
@@ -26,7 +26,7 @@ export const cars = [
     manufacturedYear: 2018,
     doors: 2,
     price: 35000,
-    available: false,
+    available: "no",
     image: "./img/mustant 3.png",
   },
   {
@@ -36,7 +36,7 @@ export const cars = [
     manufacturedYear: 2021,
     doors: 4,
     price: 45000,
-    available: true,
+    available: "yes",
     image: "./img/BMW 3 Series 4.png",
   },
   {
@@ -46,7 +46,7 @@ export const cars = [
     manufacturedYear: 2017,
     doors: 2,
     price: 32000,
-    available: false,
+    available: "no",
     image: "./img/Chavrolet 5.jpg",
   },
   {
@@ -56,7 +56,7 @@ export const cars = [
     manufacturedYear: 2022,
     doors: 4,
     price: 42000,
-    available: true,
+    available: "yes",
     image: "./img/audi a4 6.jpg",
   },
   {
@@ -66,7 +66,7 @@ export const cars = [
     manufacturedYear: 2020,
     doors: 4,
     price: 50000,
-    available: true,
+    available: "yes",
     image: "./img/mercedes e klasa 7.jpg",
   },
   {
@@ -76,7 +76,7 @@ export const cars = [
     manufacturedYear: 2019,
     doors: 4,
     price: 38000,
-    available: false,
+    available: "no",
     image: "./img/lexus 8.webp",
   },
   {
@@ -86,7 +86,7 @@ export const cars = [
     manufacturedYear: 2021,
     doors: 4,
     price: 28000,
-    available: true,
+    available: "yes",
     image: "./img/golf 9.jpg",
   },
   {
@@ -96,7 +96,7 @@ export const cars = [
     manufacturedYear: 2022,
     doors: 4,
     price: 32000,
-    available: true,
+    available: "yes",
     image: "./img/subaru 10.png",
   },
 ];
