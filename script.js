@@ -2,7 +2,6 @@ import { cars as data } from "./data";
 const car = document.querySelector(".car");
 const sortOptions = document.querySelector(".sortOptions");
 const availability = document.querySelector(".availability");
-const deleteCars = document.querySelector(".deleteCar");
 
 function logicCars() {
   let cars = [...data];
@@ -67,16 +66,6 @@ function logicCars() {
     filteredCars = filteredCars.filter((element) => element[key] === value);
     console.log(filteredCars);
     displayCars(filteredCars);
-
-    // if (valueElement === "available") {
-    //   filteredCars = filteredCars.filter((car) => car.available === true);
-    //   displayCars(filteredCars);
-    // } else if (valueElement === "notAvailable") {
-    //   filteredCars = filteredCars.filter((car) => car.available === false);
-    //   displayCars(filteredCars);
-    // } else {
-    //   return displayCars(cars);
-    // }
   }
   const getCars = () => filteredCars;
   return {
@@ -90,16 +79,5 @@ const logic = logicCars();
 
 logic.displayCars(logic.getCars());
 
-// function deleteCar(event) {
-//   const valueElement = event.target.value;
-//   console.log(valueElement);
-//   cars.forEach((element) => {
-//     const deleteElement = element !== valueElement;
-//     console.log(deleteElement);
-//   });
-//   displayCars(deleteElement);
-// }
-// deleteCar();
-// deleteCars.addEventListener("click", deleteCar);
 availability.addEventListener("change", logic.availableCars);
 sortOptions.addEventListener("change", logic.sortCars);
