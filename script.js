@@ -2,6 +2,7 @@ import { cars } from "./data";
 const car = document.querySelector(".car");
 const sortOptions = document.querySelector(".sortOptions");
 const availability = document.querySelector(".availability");
+const deleteCars = document.querySelector(".deleteCar");
 
 function displayCars(elementCars) {
   car.innerHTML = "";
@@ -26,7 +27,8 @@ function displayCars(elementCars) {
   <p style="background-color: ${backgroundColor};"><strong>Available:</strong> ${
       data.available ? "Yes" : "No"
     }</p>
-  <hr>
+    <p class="deleteCar">Delete</p>
+ 
   </div>
 `;
     car.appendChild(cars);
@@ -71,5 +73,14 @@ function availableCars(event) {
     return displayCars(cars);
   }
 }
+
+// function deleteCar(event) {
+//   const valueElement = event.target.value;
+//   cars.forEach((element) => {
+//     const deleteElement = element !== valueElement;
+//   });
+//   displayCars(deleteElement);
+// }
+// deleteCars.addEventListener("click", deleteCar);
 availability.addEventListener("change", availableCars);
 sortOptions.addEventListener("change", sortCars);
