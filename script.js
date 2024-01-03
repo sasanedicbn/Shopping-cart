@@ -42,6 +42,8 @@ function logicCars() {
       low: (a, b) => a.price - b.price,
       high: (a, b) => b.price - a.price,
     };
+
+    const sortingFunction = sortingFunctions[event.target.value];
   }
 
   function availableCars(event) {
