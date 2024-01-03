@@ -73,6 +73,7 @@ function logicCars() {
     availableCars,
     getCars,
     deleteCar,
+    numberDoors,
   };
 }
 const logic = logicCars();
@@ -80,4 +81,4 @@ const logic = logicCars();
 logic.displayCars(logic.getCars());
 availability.addEventListener("click", logic.deleteCar);
 availability.addEventListener("change", logic.availableCars);
-sortOptions.addEventListener("change", logic.sortCars);
+sortOptions.addEventListener("change", logic.numberDoors);
