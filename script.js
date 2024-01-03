@@ -6,12 +6,13 @@ const availability = document.querySelector(".availability");
 function logicCars() {
   let cars = [...data];
   let filteredCars = [...cars];
+  console.log(filteredCars);
   const displayCars = (elementCars) => {
     car.innerHTML = "";
     console.log(elementCars);
     elementCars.forEach((data) => {
       const cars = document.createElement("div");
-      console.log(data);
+      //   console.log(data);
       const backgroundColor =
         data.available === "yes" ? "rgb(91, 199, 91)" : "rgb(214, 81, 81)";
       const availabilityText = data.available === "yes" ? "Yes" : "No";
@@ -35,36 +36,19 @@ function logicCars() {
     });
   };
   function sortCars(event) {
-    const valueElement = event.target.value;
-
-    if (valueElement === "az") {
-      let sortedCars = cars
-        .slice()
-        .sort((a, b) => a.name.localeCompare(b.name));
-      displayCars(sortedCars);
-      console.log(sortedCars);
-    } else if (valueElement === "za") {
-      let sortedCars = filteredCars.sort((a, b) =>
-        b.name.localeCompare(a.name)
-      );
-      displayCars(sortedCars);
-      console.log(sortedCars);
-    } else if (valueElement === "low") {
-      let sortedCarsLow = filteredCars.sort((a, b) => a.price - b.price);
-      console.log(sortedCarsLow);
-      displayCars(sortedCarsLow);
-    } else if (valueElement === "high") {
-      const sortedCarsHigh = filteredCars.sort((a, b) => b.price - a.price);
-      displayCars(sortedCarsHigh);
-    } else {
-      return;
-    }
+    const sortingFunctions = {
+      az: (a, b) => a.name.localeCompare(b.name),
+      za: (a, b) => b.name.localeCompare(a.name),
+      low: (a, b) => a.price - b.price,
+      high: (a, b) => b.price - a.price,
+    };
   }
+
   function availableCars(event) {
     const [key, value] = event.target.value.split("-");
+    console.log(key, value);
     filteredCars = [...cars];
     filteredCars = filteredCars.filter((element) => element[key] === value);
-    console.log(filteredCars);
     displayCars(filteredCars);
   }
   const getCars = () => filteredCars;
