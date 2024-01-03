@@ -72,6 +72,6 @@ function logicCars() {
 const logic = logicCars();
 
 logic.displayCars(logic.getCars());
-
+deleteButton.addEventListener("click", logic.deleteButton);
 availability.addEventListener("change", logic.availableCars);
 sortOptions.addEventListener("change", logic.sortCars);
