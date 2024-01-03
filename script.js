@@ -2,6 +2,7 @@ import { cars as data } from "./data";
 const car = document.querySelector(".car");
 const sortOptions = document.querySelector(".sortOptions");
 const availability = document.querySelector(".availability");
+const deleteButton = document.querySelector(".deleteCar");
 
 function logicCars() {
   let cars = [...data];
@@ -42,9 +43,7 @@ function logicCars() {
       low: (a, b) => a.price - b.price,
       high: (a, b) => b.price - a.price,
     };
-
     const sortingFunction = sortingFunctions[event.target.value];
-
     if (sortingFunction) {
       filteredCars.sort(sortingFunction);
       displayCars(filteredCars);
@@ -57,6 +56,10 @@ function logicCars() {
     filteredCars = [...cars];
     filteredCars = filteredCars.filter((element) => element[key] === value);
     displayCars(filteredCars);
+  }
+  function deleteCar() {
+    const id = filteredCars.id;
+    console.log(id);
   }
   const getCars = () => filteredCars;
   return {
