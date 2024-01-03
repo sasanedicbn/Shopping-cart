@@ -31,8 +31,13 @@ function logicCars() {
     </div>
     <p style="background-color: ${backgroundColor};"><strong>Available:</strong> ${availabilityText}</p>
       <button class="deleteCar" data-carId=${data.id}>Delete</button>
+      
     </div>
   `;
+      const deleteButton = cars.querySelector(".deleteCar");
+      deleteButton.addEventListener("click", function () {
+        deleteCar(data.id);
+      });
       car.appendChild(cars);
     });
   };
@@ -57,9 +62,10 @@ function logicCars() {
     filteredCars = filteredCars.filter((element) => element[key] === value);
     displayCars(filteredCars);
   }
-  function deleteCar() {
-    const id = filteredCars.id;
+  function deleteCar(id) {
     console.log(id);
+    filteredCars = filteredCars.filter((el) => el.id !== id);
+    displayCars(filteredCars);
   }
   const getCars = () => filteredCars;
   return {
@@ -67,11 +73,12 @@ function logicCars() {
     sortCars,
     availableCars,
     getCars,
+    deleteCar,
   };
 }
 const logic = logicCars();
 
 logic.displayCars(logic.getCars());
-deleteButton.addEventListener("click", logic.deleteButton);
+availability.addEventListener("click", logic.deleteCar);
 availability.addEventListener("change", logic.availableCars);
 sortOptions.addEventListener("change", logic.sortCars);
