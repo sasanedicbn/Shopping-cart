@@ -44,6 +44,11 @@ function logicCars() {
     };
 
     const sortingFunction = sortingFunctions[event.target.value];
+
+    if (sortingFunction) {
+      filteredCars.sort(sortingFunction);
+      displayCars(filteredCars);
+    }
   }
 
   function availableCars(event) {
