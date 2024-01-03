@@ -48,9 +48,9 @@ function logicCars() {
       low: (a, b) => a.price - b.price,
       high: (a, b) => b.price - a.price,
     };
-    const sortingFunction = sortingFunctions[event.target.value];
-    if (sortingFunction) {
-      filteredCars.sort(sortingFunction);
+    const sort = sortingFunctions[event.target.value];
+    if (sort) {
+      filteredCars.sort(sort);
       displayCars(filteredCars);
     }
   }
@@ -63,7 +63,6 @@ function logicCars() {
     displayCars(filteredCars);
   }
   function deleteCar(id) {
-    console.log(id);
     filteredCars = filteredCars.filter((el) => el.id !== id);
     displayCars(filteredCars);
   }
